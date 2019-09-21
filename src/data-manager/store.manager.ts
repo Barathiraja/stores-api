@@ -41,8 +41,9 @@ export class StoreManager {
 
     public updateStore = async (storeId, store) => {
         try {
-            const result = await this.collection.findOne({ Id: storeId });
-            if (store === null || store === undefined) {
+            const updateQuery = { Id: storeId };
+            const result = await this.collection.findOne();
+            if (result == null || result === undefined) {
                 throw new Error("No Store Found for given Id");
             }
             for (let key in store) {

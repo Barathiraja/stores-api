@@ -30,7 +30,6 @@ export class StoreController {
 
     public getAllStores(request: Request, response: Response, next: NextFunction) {
         let manager = new StoreManager();
-        console.log(typeof request.query["customercount"])
         let isCustomerCountRequired = request.query["customercount"] === "true" ? true : false;
         manager.getAllStores(isCustomerCountRequired).then((result) => {
             return Api.ok(request, response, result);

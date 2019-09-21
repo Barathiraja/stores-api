@@ -22,6 +22,9 @@ export class CustomerController {
             manager.addCustomer(request.body).then((result) => {
                 return Api.ok(request, response, result);
             }, (err) => {
+                if (err.stacktrace) {
+                    delete err.stacktrace;
+                }
                 next(err);
             });
         }

@@ -10,7 +10,6 @@ export class CustomerManager {
     public addCustomer = async (customer: ICustomer) => {
         try {
             let customerData = await this.collection.find({ Id: customer.Id });
-            console.log(customerData)
             if (customerData.length) {
                 throw new Error("Document already available with same Id");
             } else {

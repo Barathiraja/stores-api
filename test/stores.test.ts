@@ -12,7 +12,6 @@ describe("stores", () => {
                 .get('/api/v1/stores')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
-                    console.log('err')
                     res.should.have.status(200);
                     res.body.should.be.a('Array');
                     done();
@@ -24,7 +23,6 @@ describe("stores", () => {
                 .get('/api/v1/stores?customercount=true')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
-                    console.log('err')
                     res.should.have.status(200);
                     res.body.should.be.a('Array');
                     done();

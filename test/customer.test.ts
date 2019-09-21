@@ -20,7 +20,6 @@ describe("Customers", () => {
                     "Email": "barathi@company.com"
                 })
                 .end((err, res) => {
-                    console.log('err')
                     res.should.have.status(200);
                     res.body.should.be.a('Object');
                     done();

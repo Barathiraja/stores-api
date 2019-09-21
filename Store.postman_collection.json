@@ -1,0 +1,163 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Store",
+		"_postman_id": "5de8c503-e91e-44f4-316f-13e085341d98",
+		"description": "Contains all store APIs\n\n1) get single store by store Id\n2) get All Stores\n3) update store\n4) list all stores with customer count\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ping",
+			"request": {
+				"url": "http://localhost:30301/api/v1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Basic api ping"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllStores",
+			"request": {
+				"url": "http://localhost:30301/api/v1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Basic api ping"
+			},
+			"response": []
+		},
+		{
+			"name": "getstoreswithcustomercount",
+			"request": {
+				"url": "http://localhost:30301/api/v1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Basic api ping"
+			},
+			"response": []
+		},
+		{
+			"name": "getstorebyId",
+			"request": {
+				"url": "http://localhost:30301/api/v1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Basic api ping"
+			},
+			"response": []
+		},
+		{
+			"name": "get_customer_by_storeId",
+			"request": {
+				"url": "http://localhost:30301/api/v1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Basic api ping"
+			},
+			"response": []
+		},
+		{
+			"name": "get_store_by_Name",
+			"request": {
+				"url": "http://localhost:30301/api/v1/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Basic api ping"
+			},
+			"response": []
+		},
+		{
+			"name": "updatestore",
+			"request": {
+				"url": "http://localhost:30301/api/v1/stores/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n\t    \"Id\": 122222\n}"
+				},
+				"description": "Basic api ping"
+			},
+			"response": []
+		},
+		{
+			"name": "create_customer",
+			"request": {
+				"url": "http://localhost:30301/api/v1/customers/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "Yn8uMnIhcg==.",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"Id\":200003,\"StoreId\":4,\n\"Firstname\":\"Barathi\",\n\"Lastname\":\"Raja\",\n\"Phone\":\"799-53-61\",\n\"Email\":\"barathi@compa\"\n}"
+				},
+				"description": "Basic api ping"
+			},
+			"response": []
+		}
+	]
+}
