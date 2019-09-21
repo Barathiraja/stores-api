@@ -1,0 +1,10 @@
+{
+  "Config": {
+    "port": 30301,
+    "appConfig": {
+      "version": "1.0.0",
+      "name": "stores-api",
+      "env": "production"
+    }
+  }
+}

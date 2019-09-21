@@ -1,0 +1,28 @@
+{
+  "Config": {
+    "port": 30301,
+    "appConfig": {
+      "version": "1.0.0",
+      "name": "store-api",
+      "env": "development",
+      "baseurl": "/api/v1"
+    },
+    "appSettings": {
+      "excludedUrl": [
+        "info"
+      ]
+    },
+    "dbConnections": {
+      "default": {
+        "user": "",
+        "password": "",
+        "options": {
+          "host": "localhost",
+          "database": "shared-dev",
+          "requestTimeout": 300000
+        }
+      }
+    },
+    "apikey": "Yn8uMnIhcg==."
+  }
+}
