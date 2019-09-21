@@ -34,7 +34,6 @@ describe("stores", () => {
                 .get('/api/v1/stores/1')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
-                    console.log('err')
                     res.should.have.status(200);
                     res.body.should.be.a('Object');
                     done();
@@ -46,7 +45,6 @@ describe("stores", () => {
                 .get('/api/v1/stores/1/customers')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
-                    console.log('err')
                     res.should.have.status(200);
                     res.body.should.be.a('Array');
                     done();
@@ -58,7 +56,6 @@ describe("stores", () => {
                 .get('/api/v1/stores/Divape/search')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
-                    console.log('err')
                     res.should.have.status(200);
                     res.body.should.be.a('Array');
                     done();
@@ -80,7 +77,6 @@ describe("stores", () => {
                     "State": "TamilNadu"
                 })
                 .end((err, res) => {
-                    console.log('err')
                     res.should.have.status(200);
                     res.body.should.be.a('Object');
                     done();
