@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Customer",
+        "title": "Customers",
         "description": "",
         "version": "1.0"
     },
@@ -10,127 +10,29 @@
     ],
     "tags": [
         {
-            "name": "Customer",
+            "name": "customers",
             "description": ""
         }
     ],
-    "host": "",
-    "basePath": "/Customers",
+    "host": "localhost:30301",
+    "basePath": "/api/v1/customers",
     "paths": {
         "/": {
-            "get": {
-                "tags": [
-                    "customer"
-                ],
-                "description": "Display all the customers",
-                "responses": {
-                    "400": {
-                        "description": "Invalid input"
-                    },
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            },
             "post": {
                 "tags": [
-                    "customer"
+                    "Create a customer"
                 ],
-                "description": "Add a new customer",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
+                "description": "Create a Customer Record",
                 "required": true,
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Payload for adding new",
+                        "description": "Create a customer",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/customer"
                         }
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "description": "Invalid input"
-                    },
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            },
-            "put": {
-                "tags": [
-                    "customer"
-                ],
-                "description": "Update an existing customer",
-                "required": true,
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "To add a update a customer, provide the existing Id",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/customer"
-                        }
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "description": "Invalid input"
-                    },
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            }
-        },
-        "/{id}": {
-            "get": {
-                "tags": [
-                    "Customer"
-                ],
-                "description": "Get customer by Id",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "number"
-                    }
-                ],
-                "responses": {
-                    "400": {
-                        "description": "Invalid input"
-                    },
-                    "200": {
-                        "description": "Success"
-                    }
-                }
-            },
-            "delete": {
-                "tags": [
-                    "Customer"
-                ],
-                "description": "Delete a customer by Id",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "number"
                     }
                 ],
                 "responses": {
@@ -152,10 +54,20 @@
                     "type": "number",
                     "format": "int64"
                 },
-                "Name": {
+                "StoreId": {
+                    "type": "number",
+                    "format": "int64"
+                },
+                "Firstname": {
                     "type": "string"
                 },
-                "Address": {
+                "Lastname": {
+                    "type": "string"
+                },
+                "Phone": {
+                    "type": "string"
+                },
+                "Email": {
                     "type": "string"
                 }
             }

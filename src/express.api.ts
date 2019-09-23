@@ -10,7 +10,7 @@ import { ApiRouting } from './api.routing';
 import * as cors from 'cors';
 import { Api } from './helpers/api';
 import { IConfig, AppSetting } from './config';
-// import { SwaggerController } from './controller/swagger.controller';
+import { SwaggerController } from './controller/swagger.controller';
 import { AuthenticationModule } from './helpers/authentication.module';
 
 export class ExpressApi {
@@ -65,7 +65,7 @@ export class ExpressApi {
         });
 
         ApiRouting.ConfigureRouters(this.app);
-        // SwaggerController.configure(this.app);
+        SwaggerController.configure(this.app);
     }
 
     private errorHandler() {

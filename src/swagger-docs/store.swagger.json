@@ -1,0 +1,170 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Store",
+        "description": "",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "Store",
+            "description": ""
+        }
+    ],
+    "host": "localhost:30301",
+    "basePath": "/api/v1/stores",
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "Stores, Stores with Customer Count, Search Store"
+                ],
+                "description": "Get all the Stores, Get stores with customer count, search for as store",
+                "parameters": [
+                    {
+                        "name": "customercount",
+                        "in": "query",
+                        "type": "boolean"
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "tags": [
+                    "Get Store By given Store Id"
+                ],
+                "description": "Get Store by Id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Update a Store"
+                ],
+                "description": "Update an existing Store",
+                "required": true,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "number"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "To  update a store, provide the store details",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/store"
+                        }
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/{id}/customers": {
+            "get": {
+                "tags": [
+                    "Get Customers for given Store Id"
+                ],
+                "description": "Get Customers for given Store Id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "number"
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Invalid input"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "store": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "number",
+                    "format": "int64"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Street": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

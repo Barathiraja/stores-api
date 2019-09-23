@@ -95,7 +95,28 @@
 		{
 			"name": "get_store_by_Name",
 			"request": {
-				"url": "http://localhost:30301/api/v1/",
+				"url": {
+					"raw": "http://localhost:30301/api/v1/stores?search=aibox",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "30301",
+					"path": [
+						"api",
+						"v1",
+						"stores"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "aibox",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "GET",
 				"header": [
 					{

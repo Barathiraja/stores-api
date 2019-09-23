@@ -12,7 +12,6 @@ describe("stores", () => {
                 .get('/api/v1/stores')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
-                    console.log(err)
                     res.should.have.status(200);
                     res.body.should.be.a('Array');
                     done();
@@ -35,7 +34,6 @@ describe("stores", () => {
                 .get('/api/v1/stores/2')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
-                    console.log(err)
                     res.should.have.status(200);
                     res.body.should.be.a('Object');
                     done();
@@ -55,7 +53,7 @@ describe("stores", () => {
 
         it("should Search for Store", (done) => {
             chai.request(app)
-                .get('/api/v1/stores/Divape/search')
+                .get('/api/v1/stores?search=aibox')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .end((err, res) => {
                     res.should.have.status(200);
@@ -71,7 +69,7 @@ describe("stores", () => {
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .send({
                     "Id": 1,
-
+                    "Phone": "8-772-453-83-20",
                     "Name": "Latz",
                     "Domain": "barathi.com",
                     "Status": "true",

@@ -11,7 +11,6 @@ export class StoreController {
     constructor() {
 
         this.router.get('/', this.getAllStores);
-        this.router.get('/:searchtext/search', this.getStoreByName)
         this.router.get('/:id', this.getStoreById);
         this.router.put('/:id', this.updateStore);
         this.router.get('/:id/customers', this.getCustomerByStoreId);
@@ -30,12 +29,21 @@ export class StoreController {
 
     public getAllStores(request: Request, response: Response, next: NextFunction) {
         let manager = new StoreManager();
-        let isCustomerCountRequired = request.query["customercount"] === "true" ? true : false;
-        manager.getAllStores(isCustomerCountRequired).then((result) => {
-            return Api.ok(request, response, result);
-        }, (err) => {
-            next(err);
-        });
+        let searchquery = request.query['search'];
+        if (searchquery) {
+            manager.getStoreByName(searchquery).then((result) => {
+                return Api.ok(request, response, result);
+            }, (err) => {
+                next(err);
+            });
+        } else {
+            let isCustomerCountRequired = request.query["customercount"] === "true" ? true : false;
+            manager.getAllStores(isCustomerCountRequired).then((result) => {
+                return Api.ok(request, response, result);
+            }, (err) => {
+                next(err);
+            });
+        }
     }
 
     public updateStore(request: Request, response: Response, next: NextFunction) {
@@ -59,16 +67,6 @@ export class StoreController {
         let manager = new CustomerManager();
         let id = parseInt(request.params['id'], 0);
         manager.getCustomerByStoreId(id).then((result) => {
-            return Api.ok(request, response, result);
-        }, (err) => {
-            next(err);
-        });
-    }
-
-    public getStoreByName(request: Request, response: Response, next: NextFunction) {
-        let manager = new StoreManager();
-        let searchtext = request.params.searchtext;
-        manager.getStoreByName(searchtext).then((result) => {
             return Api.ok(request, response, result);
         }, (err) => {
             next(err);

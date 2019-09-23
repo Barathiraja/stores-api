@@ -4,6 +4,10 @@ chai.use(require('chai-http'));
 import { app } from '../src/main';
 chai.should();
 
+const getRandomInt = (base = 100000) => {
+    return Math.floor(Math.random() * base)
+}
+
 describe("Customers", () => {
 
     describe("POST", () => {
@@ -12,7 +16,7 @@ describe("Customers", () => {
                 .post('/api/v1/customers/')
                 .set('x-api-key', 'Yn8uMnIhcg==.')
                 .send({
-                    "Id": 200003,
+                    "Id": getRandomInt(),
                     "StoreId": 4,
                     "Firstname": "Barathi",
                     "Lastname": "Raja",
