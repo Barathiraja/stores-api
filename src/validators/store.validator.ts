@@ -7,6 +7,7 @@ const storeValidator = Joi.object().keys({
     Phone: Joi.string(),
     Status: Joi.string(),
     Street: Joi.string(),
+    State: Joi.string(),
 })
 
 export default storeValidator;

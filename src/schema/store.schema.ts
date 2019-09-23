@@ -7,7 +7,8 @@ const StoreSchema = new mongoose.Schema({
     Domain: { type: String },
     phone: { type: String },
     Status: { type: String },
-    Street: { type: String }
+    Street: { type: String },
+    State: { type: String }
 });
 
 const Store = mongoose.model<IStore>('store', StoreSchema);

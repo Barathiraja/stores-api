@@ -8,6 +8,7 @@ interface IStore extends mongoose.Document {
     Domain: string;
     Status: string;
     Street: string;
+    State: string,
 };
 
 export default IStore;
