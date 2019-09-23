@@ -37,14 +37,14 @@ export class AuthenticationModule {
         let authenticModule = new AuthenticationModule();
         app.use(async (req, res, next) => {
             let config = AppSetting.getConfig();
-            let auth = req.headers['x-access-token'] || req.query['token'];
+            let auth = req.headers['x-access-token'] || req.query['token']
             if (req.url === '/') {
                 return res.json({
                     name: config.appConfig.name,
                     version: config.appConfig.version,
                 });
             } else if (AuthenticationModule.isExcluded(req, res) ||
-                AuthenticationModule.isValidApiToken(req)) {
+                AuthenticationModule.isValidApiToken(req) || AuthenticationModule.isLocal(req)) {
                 next();
             } else {
                 if (auth) {

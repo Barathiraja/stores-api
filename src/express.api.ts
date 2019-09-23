@@ -7,6 +7,7 @@ import * as express from 'express';
 
 import { Logger } from './helpers/logger';
 import { ApiRouting } from './api.routing';
+import * as cors from 'cors';
 import { Api } from './helpers/api';
 import { IConfig, AppSetting } from './config';
 // import { SwaggerController } from './controller/swagger.controller';
@@ -35,6 +36,7 @@ export class ExpressApi {
     private configureMiddleware() {
         this.app.use(json({ limit: '50mb' }));
         this.app.use(compression());
+        this.app.use(cors());
         this.app.use(urlencoded({ limit: '50mb', extended: true }));
         AuthenticationModule.authenticate(this.app);
         Logger.configureLogger(this.app);
