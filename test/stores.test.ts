@@ -18,7 +18,7 @@ describe("stores", () => {
                 });
         });
 
-        it("should Retrieve list of Stores w/ total customers count", (done) => {
+        it("should Retrieve list of Stores total customers count", (done) => {
             chai.request(app)
                 .get('/api/v1/stores?customercount=true')
                 .set('x-api-key', 'Yn8uMnIhcg==.')

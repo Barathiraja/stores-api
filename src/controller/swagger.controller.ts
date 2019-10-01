@@ -7,6 +7,6 @@ export class SwaggerController {
 
     public static configure(app: Express) {
         app.use('/api/v1/swagger/stores', swaggerUi.serve, swaggerUi.setup(Store));
-        app.use('/api/v1/swagger/customers', swaggerUi.serve, swaggerUi.setup(Customer));
+        // app.use('/api/v1/swagger/customers', swaggerUi.serve, swaggerUi.setup(Customer));
     }
 }

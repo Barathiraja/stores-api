@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Stores API",
     "author": "Barathirajan M",
-    "main": "build/main.js",
+    "main": "build/store-api.js",
     "scripts": {
         "build:dev": "npm run clean:dist && webpack --mode=development",
         "build:prod": "npm run clean:dist && webpack --mode=production",
